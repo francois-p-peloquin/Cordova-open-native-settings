@@ -2,17 +2,21 @@
 
 The plugin allows you to open OS settings on iOS 9 and Android, via cordova-based app. For example, it will allow you to open the keyboard settings, Wifi, bluetooth etc (full list below).
 
+#Please note
+
+The reason that I forked the code was that it ceased to work with iOS 10. I have made a temporary fix using a patch of code I found online for fallback linking. It will open the iOS 10 native settings page, but on other older versions it will open local settings pages.
+
 ##Adding/Removing the Plugin 
 It will be saved to the config.xml file
 
 ```bash
-cordova plugin (add|rm) https://github.com/guyromb/Cordova-open-native-settings.git --save
+cordova plugin (add|rm) https://github.com/francois-p-peloquin/Cordova-open-native-settings.git
 ```
 
 or via npm (It will be saved to the package.json file)
 
 ```bash
-npm (install|rm) https://github.com/guyromb/Cordova-open-native-settings.git --save
+npm (install|rm) https://github.com/francois-p-peloquin/Cordova-open-native-settings.git --save
 ```
 
 ##Using the plugin (opens Location Settings in Android and Application Settings in iOS)
