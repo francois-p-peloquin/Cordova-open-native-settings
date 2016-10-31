@@ -3,10 +3,27 @@
 @implementation NativeSettings
 
 - (BOOL)do_open:(NSString *)pref {
-	if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:pref]]) {
-		return YES;
+	// if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:pref]]) {
+	// 	return YES;
+	// } else {
+	// 	return NO;
+	// }
+	
+	//Fallback for new iOS 10 issues, will not allow deeplink into settings, but will open native settings
+	if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:pref]]) {
+	    if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:pref]]) {
+	    	return YES;
+	    }
+	    else {
+	    	return NO;
+	    }
 	} else {
-		return NO;
+	    if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]]) {
+	    	return YES;
+	    }
+	    else {
+	    	return NO;
+	    }
 	}
 }
 
