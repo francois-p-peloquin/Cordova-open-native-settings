@@ -2,7 +2,7 @@
 
 The plugin allows you to open OS settings on iOS 9 and Android, via cordova-based app. For example, it will allow you to open the keyboard settings, Wifi, bluetooth etc (full list below).
 
-#Please note
+##Please note
 
 The reason that I forked the code was that it ceased to work with iOS 10. I have made a temporary fix using a patch of code I found online for fallback linking. It will open the iOS 10 native settings page, but on other older versions it will open local settings pages.
 
